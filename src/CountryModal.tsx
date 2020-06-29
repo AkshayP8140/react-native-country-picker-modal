@@ -35,12 +35,12 @@ export const CountryModal = ({
   }, [disableNativeModal])
   if (withModal) {
     if (Platform.OS === 'web') {
-      return <Modal {...props}>{content}</Modal>
+      return <Modal supportedOrientations:['portrait', 'portrait-upside-down', 'landscape', 'landscape-left', 'landscape-right'] {...props}>{content}</Modal>
     }
     if (disableNativeModal) {
       return null
     }
-    return <Modal {...props}>{content}</Modal>
+    return <Modal supportedOrientations:['portrait', 'portrait-upside-down', 'landscape', 'landscape-left', 'landscape-right'] {...props}>{content}</Modal>
   }
   return content
 }
